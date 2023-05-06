@@ -3,6 +3,11 @@
 
 :root {
   font-family: "Noto Sans", sans-serif;
+  --pumpkin: #fa8334ff;
+  --floral-white: #fff8f0ff;
+  --picton-blue: #3fa7d6ff;
+  --davys-gray: #D6D7D5;
+  --eerie-black: #171d1cff;
 }
 
 * {
@@ -10,6 +15,11 @@
   padding: 0;
   font-family: inherit;
   box-sizing: border-box;
+  color: var(--eerie-black);
+}
+
+text {
+  color: var(--eerie-black);
 }
 
 .grid-wrapper {
@@ -19,7 +29,7 @@
 
 aside {
   grid-row: 1 / 3;
-  background-color: teal;
+  background-color: var(--picton-blue);
   padding: 1rem;
 
   display: grid;
@@ -47,9 +57,20 @@ li > svg {
   padding: 0.2rem;
 }
 
+li {
+  font-weight: 700;
+  color: var(--floral-white);
+}
+
+.logo > svg > path,
+li > svg > path {
+  fill: var(--floral-white);
+}
+
 aside h1 {
   font-size: 2rem;
   font-weight: 800;
+  color: var(--floral-white);
 }
 
 aside > ul {
@@ -71,6 +92,8 @@ header {
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
   padding: 1rem;
+  background-color: var(--floral-white);
+  box-shadow: 0 3px 5px 0 darkgray;
 }
 
 header > div {
@@ -130,26 +153,29 @@ img {
 
 .user-btn {
   border: none;
-  background-color: aqua;
+  background-color: var(--picton-blue);
   padding: 0.8rem 1.4rem;
   font-size: 1.1rem;
   border-radius: 2rem;
   font-weight: 800;
+  color: var(--floral-white);
 }
 
 input{
   border-radius: 1rem;
-  background-color: darkgray;
+  background-color: var(--davys-gray);
   border: none;
   padding: 0.5rem;
+  outline: none;
 }
 
 main {
   display: grid;
   grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 2rem 1rem;
   padding: 1rem;
-  background-color: aquamarine;
+  background-color: var(--davys-gray);
 }
 
 main h2{
@@ -162,7 +188,7 @@ main h2{
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-auto-rows: minmax(300px, 1fr);
   gap: 1rem
 }
@@ -170,10 +196,11 @@ main h2{
 .card,
 .trending-card, 
 .announcements-card {
-  background-color: antiquewhite;
+  background-color: var(--floral-white);
   border-radius: 5px;
   padding: 1rem;
   display: grid;
+  box-shadow: 0 4px 5px 2px darkgray;
 }
 
 .trending-card, 
@@ -196,9 +223,9 @@ a {
 
 .card {
   gap: 3rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
-  border-left: 6px solid orange;
+  border-left: 6px solid var(--pumpkin);
 }
 
 .card-body{
@@ -209,12 +236,17 @@ a {
   grid-row: 2;
   grid-column: 2;
   display: grid;
+  gap: 1rem;
   grid-auto-flow: column;
   justify-content: space-between;
 }
 
 .card-button-group svg {
   height: 1.4rem;
+}
+
+svg > path {
+  fill: var(--eerie-black);
 }
 
 .anmt:not(:last-child) {
